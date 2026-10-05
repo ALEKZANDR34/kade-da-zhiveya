@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=PT+Serif:wght@400;700&display=swap">
 <!--/extras-->
-  <meta name="google-site-verification" content="Gh2bLDhFR9UssYAK3UcWAAxxEEt2wTfRH9yKzAZYShs" />
+<meta name="google-site-verification" content="Gh2bLDhFR9UssYAK3UcWAAxxEEt2wTfRH9yKzAZYShs" />
 </head><body>
 
 <style>
@@ -273,11 +273,13 @@ th[data-k]:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;borde
 @media (max-width:640px){.scopebar #facts{justify-content:flex-start;min-height:72px}.scopebar .msel{width:auto}}
 
 /* rating prompt (visible only when a form address is configured in app.js) */
-.rate{margin-top:28px;padding:22px 24px;text-align:center}
-.rate h2{margin:0 0 6px}
-.rate p{margin:0 auto 10px;max-width:56ch}
-.stars{display:inline-flex;flex-direction:row-reverse;gap:2px;margin:6px 0 10px}
-.star{font-size:38px;line-height:1;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--gold);opacity:.4;text-decoration:none;border-radius:10px;transition:opacity .15s,transform .15s}
+.rate{margin-top:20px;padding:12px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"t s" "p s" "n s";align-items:center;gap:0 20px;min-height:96px}
+.rate h2{grid-area:t;margin:0;font:700 16px/1.3 var(--ui)}
+.rate p{grid-area:p;margin:0;max-width:60ch;font:14px/1.4 var(--ui)}
+.rate p.hint{grid-area:n;font-size:12.5px}
+.stars{grid-area:s;display:inline-flex;flex-direction:row-reverse;gap:2px;margin:0;min-height:48px}
+@media (max-width:640px){.rate{grid-template-columns:minmax(0,1fr);grid-template-areas:"t" "p" "s" "n";padding:12px 16px;min-height:178px}.stars{justify-self:start}}
+.star{font-size:34px;line-height:1;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--gold);opacity:.4;text-decoration:none;border-radius:10px;transition:opacity .15s,transform .15s}
 .star:hover,.star:hover ~ .star,.star:focus-visible,.star:focus-visible ~ .star{opacity:1}
 .star:hover{transform:scale(1.12)}
 .star:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -592,6 +594,12 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 </div>
 
 <main id="main" class="wrap" tabindex="-1">
+  <section class="card rate" id="rate" aria-labelledby="rateT">
+    <h2 id="rateT" data-i="rateT">Помогна ли ви сайтът?</h2>
+    <p data-i="rateP">Оценете го с 1 до 5 звезди. Отнема половин минута, без регистрация.</p>
+    <div class="stars" id="stars" role="group" aria-labelledby="rateT"></div>
+    <p class="hint" data-i="rateN">Отваря кратка форма в нов раздел.</p>
+  </section>
   <div class="card scopebar" role="group" aria-label="Област, община и населено място">
     <div class="selrow">
       <select class="msel" id="provsel" aria-label="Област"><option>Пловдив</option></select>
@@ -656,13 +664,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
   <div class="card"><h2 data-i="mTitle">Как се смята оценката</h2><div id="method"></div></div>
   <div class="card"><h2 data-i="gTitle">Какво още липсва</h2><div id="gaps"></div></div>
   <div class="card"><h2 data-i="sTitle">Източници</h2><div id="sources"></div></div>
-</div>
-  <section class="card rate" id="rate" hidden aria-labelledby="rateT">
-    <h2 id="rateT" data-i="rateT">Помогна ли ви сайтът?</h2>
-    <p data-i="rateP">Оценете го с 1 до 5 звезди. Отнема половин минута, без регистрация.</p>
-    <div class="stars" id="stars" role="group" aria-labelledby="rateT"></div>
-    <p class="hint" data-i="rateN">Отваря кратка форма в нов раздел.</p>
-  </section></main>
+</div></main>
 
 <footer class="foot">  <div class="wrap footin"><p class="footh" data-i="footH">Къде да живея в България?</p><p class="footp" data-i="footP">Данните за услугите са от официални регистри. Приоритетите са ваши.</p>
     <p class="footc" data-i="copyR"></p></div></footer>
@@ -673,7 +675,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610040018";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610051720";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
