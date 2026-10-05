@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alekzandr34.github.io/kade-da-zhiveya/sitemap.xml
