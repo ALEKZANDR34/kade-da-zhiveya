@@ -446,6 +446,10 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--panel);font:13px var(--ui);padding:5px 9px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-130%);z-index:5}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
+/* links to the province pages in the footer */
+.footnav ul{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;padding:0;margin:16px auto 0;max-width:900px;list-style:none}
+.footnav a{color:#FFEFC4;font:600 13px var(--ui);text-underline-offset:2px}
+:root[data-theme="atlas"] .footnav a{color:var(--teal)}
 /* list filters */
 .fchips{align-items:center;min-height:44px}
 .fchip{border:1px solid var(--line);background:var(--ground);color:var(--ink);border-radius:999px;padding:5px 13px;font:700 13px var(--ui);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
@@ -689,7 +693,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 </div></main>
 
 <footer class="foot">  <div class="wrap footin"><p class="footh" data-i="footH">Къде да живея в България?</p><p class="footp" data-i="footP">Данните за услугите са от официални регистри. Приоритетите са ваши.</p>
-    <p class="footc" data-i="copyR"></p></div></footer>
+    <nav class="footnav" aria-label="Оценка по области"><ul><li><a href="oblast-blagoevgrad.html">Област Благоевград</a></li><li><a href="oblast-burgas.html">Област Бургас</a></li><li><a href="oblast-varna.html">Област Варна</a></li><li><a href="oblast-veliko-tarnovo.html">Област Велико Търново</a></li><li><a href="oblast-vidin.html">Област Видин</a></li><li><a href="oblast-vratsa.html">Област Враца</a></li><li><a href="oblast-gabrovo.html">Област Габрово</a></li><li><a href="oblast-dobrich.html">Област Добрич</a></li><li><a href="oblast-kardzhali.html">Област Кърджали</a></li><li><a href="oblast-kyustendil.html">Област Кюстендил</a></li><li><a href="oblast-lovech.html">Област Ловеч</a></li><li><a href="oblast-montana.html">Област Монтана</a></li><li><a href="oblast-pazardzhik.html">Област Пазарджик</a></li><li><a href="oblast-pernik.html">Област Перник</a></li><li><a href="oblast-pleven.html">Област Плевен</a></li><li><a href="oblast-plovdiv.html">Област Пловдив</a></li><li><a href="oblast-razgrad.html">Област Разград</a></li><li><a href="oblast-ruse.html">Област Русе</a></li><li><a href="oblast-silistra.html">Област Силистра</a></li><li><a href="oblast-sliven.html">Област Сливен</a></li><li><a href="oblast-smolyan.html">Област Смолян</a></li><li><a href="oblast-sofia-capital.html">София-град</a></li><li><a href="oblast-sofia-province.html">Софийска област</a></li><li><a href="oblast-stara-zagora.html">Област Стара Загора</a></li><li><a href="oblast-targovishte.html">Област Търговище</a></li><li><a href="oblast-haskovo.html">Област Хасково</a></li><li><a href="oblast-shumen.html">Област Шумен</a></li><li><a href="oblast-yambol.html">Област Ямбол</a></li></ul></nav><p class="footc" data-i="copyR"></p></div></footer>
 
 <script>
 /* The page is complete and readable without these three files (data, satellite tiles, behaviour).
@@ -697,7 +701,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072149";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072212";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
