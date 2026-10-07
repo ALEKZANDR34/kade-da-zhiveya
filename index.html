@@ -7,6 +7,12 @@
 <meta name="theme-color" content="#080b13">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="bg_BG">
+<meta property="og:image" content="https://alekzandr34.github.io/kade-da-zhiveya/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Глобус, завъртян към България, и заглавие „Къде да живея в България?“">
+<meta property="og:url" content="https://alekzandr34.github.io/kade-da-zhiveya/">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Къде да живея в България?">
 <meta property="og:description" content="Оценка от 0 до 10 за над 5300 населени места в България според това колко лесно стигате до училище, личен лекар, аптека, зъболекар и болница. Данните за услугите са от официални регистри, а вие решавате кое е най-важно.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230E4F45'/%3E%3Cpath d='M2 16h28M16 2c-6 6-6 22 0 28M16 2c6 6 6 22 0 28' stroke='%23E2A429' stroke-width='1.6' fill='none'/%3E%3C/svg%3E">
@@ -182,7 +188,7 @@ svg.map.heat.all:not(.zoomed) .dot:not(.sel){display:none}
   .facts b{font-size:18px}
   .quick>span{flex:0 0 100%;margin:0}
   .topitem{padding:9px 10px}
-  .frow{grid-template-columns:20px 92px 1fr}
+  .frow{grid-template-columns:20px 92px 1fr auto}
 }
 .morerows{display:block;margin:12px auto 14px}
 
@@ -325,7 +331,7 @@ th[data-k]:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;borde
 /* simplified detail */
 .verdict{font:700 13px var(--ui);text-align:right;margin-top:4px}
 .frows{display:grid;gap:2px;margin-top:14px}
-.frow{display:grid;grid-template-columns:22px 150px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--line);font:14px var(--ui)}
+.frow{display:grid;grid-template-columns:22px 150px 1fr auto;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--line);font:14px var(--ui)}
 .frow:last-child{border-bottom:0}
 .frow .fi{font-weight:800;text-align:center}
 .frow .fl{font-weight:700}
@@ -440,6 +446,12 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--panel);font:13px var(--ui);padding:5px 9px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-130%);z-index:5}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
+/* share of each factor, the "how it is calculated" sentence and the data date */
+.frow .fp{font:700 13px var(--ui);font-variant-numeric:tabular-nums;color:var(--ink);text-align:right}
+.howto{margin:10px 0 0;line-height:1.5}
+.dated{margin:12px 0 0}
+.linkbtn{all:unset;cursor:pointer;color:var(--river);text-decoration:underline;text-underline-offset:2px;font:inherit}
+.linkbtn:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:3px}
 /* theme selector (light / dark / atlas) */
 .themes{width:auto;height:34px;padding:2px;gap:2px;font-size:0;cursor:default}
 .themes button{border:0;background:none;color:#F7F4E9;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;position:relative;z-index:1}
@@ -663,7 +675,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 <div class="section">
   <div class="card"><h2 data-i="mTitle">Как се смята оценката</h2><div id="method"></div></div>
   <div class="card"><h2 data-i="gTitle">Какво още липсва</h2><div id="gaps"></div></div>
-  <div class="card"><h2 data-i="sTitle">Източници</h2><div id="sources"></div></div>
+  <div class="card" id="srcCard"><h2 data-i="sTitle">Източници</h2><div id="sources"></div></div>
 </div></main>
 
 <footer class="foot">  <div class="wrap footin"><p class="footh" data-i="footH">Къде да живея в България?</p><p class="footp" data-i="footP">Данните за услугите са от официални регистри. Приоритетите са ваши.</p>
@@ -675,7 +687,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072039";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072124";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
