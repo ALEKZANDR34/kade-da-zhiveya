@@ -675,7 +675,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610051720";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072039";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
@@ -688,7 +688,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 })();
 </script>
 <noscript><p style="padding:24px;font:16px/1.5 sans-serif">За да работи картата и класирането е нужен JavaScript.</p></noscript>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Къде да живея: България","description":"Оценка от 0 до 10 за над 5300 населени места във всички 28 области на България според достъпа до училище, личен лекар, аптека, зъболекар и болница, по данни от официални регистри (НЗОК, НЗИС, МОН) и Wikidata.","spatialCoverage":"България","dateModified":"2026-09-30","copyrightNotice":"© 2026 Александър Недев. Всички права запазени.","creator":{"@type":"Person","name":"Александър Недев"},"inLanguage":["bg","en"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"Къде да живея: България","description":"Оценка от 0 до 10 за над 5300 населени места във всички 28 области на България според достъпа до училище, личен лекар, аптека, зъболекар и болница, по данни от официални регистри (НЗОК, НЗИС, МОН) и Wikidata.","spatialCoverage":"България","dateModified":"2026-09-30","copyrightNotice":"© 2026 Александър Недев. Всички права запазени.","license":"https://alekzandr34.github.io/kade-da-zhiveya/LICENSE.txt","creator":{"@type":"Person","name":"Александър Недев"},"inLanguage":["bg","en"]}</script>
 
 <script data-goatcounter="https://alekzandr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body></html>

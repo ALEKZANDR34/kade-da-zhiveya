@@ -1,0 +1,12 @@
+Copyright (c) 2026 Александър Недев (Aleksandar Nedev) - "Къде да живея в България" / "Where to live in Bulgaria". All rights reserved.
+
+This project (the site, its source code, the scoring method and the compiled data set) is proprietary.
+No permission is granted to copy, modify, distribute, sublicense, host or republish it, in whole or in part,
+without the prior written permission of the author. Viewing the published site in a browser is permitted.
+
+Third-party material keeps its own terms and is credited on the site under "Sources":
+  - Official registers (NHIF, NHIS / Ministry of Health, Ministry of Education): property of the institutions.
+  - Wikidata (CC0) and OpenStreetMap contributors (ODbL): coordinates and names.
+  - geoBoundaries: province and municipality boundaries (credit required, CC BY 4.0).
+  - NASA Earth Observatory / GIBS Blue Marble imagery: public domain, NASA credit requested.
+  - Geist, Manrope, PT Serif, Unbounded, Marck Script, Caveat: SIL Open Font License, via Google Fonts.
