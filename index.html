@@ -446,6 +446,15 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 .tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--panel);font:13px var(--ui);padding:5px 9px;border-radius:6px;white-space:nowrap;transform:translate(-50%,-130%);z-index:5}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
+/* list filters */
+.fchips{align-items:center;min-height:44px}
+.fchip{border:1px solid var(--line);background:var(--ground);color:var(--ink);border-radius:999px;padding:5px 13px;font:700 13px var(--ui);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.fchip:hover{border-color:var(--river);color:var(--river)}
+.fchip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:var(--panel)}
+.fchips .fsel{font:600 13px var(--ui);padding:5px 8px;border-radius:999px;color:var(--ink)}
+.nomatch{padding:18px;text-align:center}
+@media (pointer:coarse){.fchip,.fchips .fsel{min-height:44px}}
+@media (max-width:640px){.fchips .fsel{flex:1 1 130px}}
 /* share of each factor, the "how it is calculated" sentence and the data date */
 .frow .fp{font:700 13px var(--ui);font-variant-numeric:tabular-nums;color:var(--ink);text-align:right}
 .howto{margin:10px 0 0;line-height:1.5}
@@ -661,6 +670,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
       <div class="filters">
         <input id="q" type="search" placeholder="Търсене по име" data-ph="qPh" aria-label="Търсене">
       </div>
+      <div class="filters fchips" id="fchips" role="group" aria-label="Филтри за списъка и картата"></div>
       <div class="tablewrap"><table id="tbl">
         <thead><tr>
           <th class="num" data-k="rank">#</th>
@@ -687,7 +697,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072124";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072149";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
