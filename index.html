@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=PT+Serif:wght@400;700&display=swap">
 <!--/extras-->
+<link rel="canonical" href="https://alekzandr34.github.io/kade-da-zhiveya/">
 <meta name="google-site-verification" content="Gh2bLDhFR9UssYAK3UcWAAxxEEt2wTfRH9yKzAZYShs" />
 </head><body>
 
@@ -188,7 +189,7 @@ svg.map.heat.all:not(.zoomed) .dot:not(.sel){display:none}
   .facts b{font-size:18px}
   .quick>span{flex:0 0 100%;margin:0}
   .topitem{padding:9px 10px}
-  .frow{grid-template-columns:20px 92px 1fr auto}
+  .frow{grid-template-columns:20px 84px minmax(0,1fr) auto}.frow .fn{min-width:0;overflow-wrap:anywhere}
 }
 .morerows{display:block;margin:12px auto 14px}
 
@@ -331,7 +332,7 @@ th[data-k]:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;borde
 /* simplified detail */
 .verdict{font:700 13px var(--ui);text-align:right;margin-top:4px}
 .frows{display:grid;gap:2px;margin-top:14px}
-.frow{display:grid;grid-template-columns:22px 150px 1fr auto;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--line);font:14px var(--ui)}
+.frow{display:grid;grid-template-columns:22px 150px minmax(0,1fr) auto;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--line);font:14px var(--ui)}
 .frow:last-child{border-bottom:0}
 .frow .fi{font-weight:800;text-align:center}
 .frow .fl{font-weight:700}
@@ -476,7 +477,8 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 .cmphead{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;margin-bottom:12px}
 .cmphead h2{font:700 13px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--river);margin:0}
 .cmphead p{margin:4px 0 0}
-.cmpslots{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.cmpslots{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:12px}
+.cmpbtns{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .cslot{position:relative;min-width:0;border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--ground);min-height:128px;display:flex;flex-direction:column;gap:6px}
 .cslot.win{border-color:var(--good);box-shadow:inset 0 0 0 1px var(--good)}
 .cslot input{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel);color:var(--ink);font:600 14px var(--ui)}
@@ -495,7 +497,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 .csum{margin:14px 0 0;font:700 15px/1.4 var(--ui)}
 .csum small{display:block;font:500 13px var(--ui);color:var(--muted);margin-top:2px}
 .crows{margin-top:10px}
-.crow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:4px 12px;padding:9px 0;border-bottom:1px solid var(--line)}
 .crow:last-child{border-bottom:0}
 .clab{grid-column:1/-1;font:700 12px var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .ccell{min-width:0;font:13px var(--ui)}
@@ -506,7 +508,9 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
 .ccell.win .cval{color:var(--good-t)}
 .cnote{color:var(--muted);font-size:12.5px;margin-top:3px;overflow-wrap:anywhere}
 .cmpfoot{display:flex;justify-content:space-between;align-items:center;gap:8px 16px;flex-wrap:wrap;margin-top:12px}
-@media (max-width:640px){.cmp{padding:14px 12px}.cslot{padding:10px}.cslot .cs{font-size:28px}}
+@media (max-width:640px){.cmp{padding:14px 12px}.cslot{padding:10px}.cslot .cs{font-size:28px}
+  .cmpslots[style*="--cols:3"] .cslot{padding:8px}.cmpslots[style*="--cols:3"] .cs{font-size:22px}.cmpslots[style*="--cols:3"] h3{font-size:15px;overflow-wrap:break-word;hyphens:auto}.cmpslots[style*="--cols:3"] .sl{font-size:10px;letter-spacing:.04em}.cmpslots[style*="--cols:3"] .ca .btn{font-size:11px;padding:3px 8px}
+  .crows[style*="--cols:3"] .crow{gap:4px 6px}.crows[style*="--cols:3"] .cnote{font-size:11px}.crows[style*="--cols:3"] .cval{font-size:13px}}
 
 /* favourites and the shareable "My choice" card */
 .dact{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
@@ -701,7 +705,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610072212";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610100935";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
