@@ -12,3 +12,4 @@ Third-party material keeps its own terms and is credited on the site under "Sour
   - Geist, Manrope, PT Serif, Unbounded, Marck Script, Caveat: SIL Open Font License, via Google Fonts.
   - Speedtest(R) by Ookla(R) Global Fixed and Mobile Network Performance Maps (CC BY-NC-SA 4.0): based on analysis by Ookla of Speedtest Intelligence(R) data for Q3 2026, provided by Ookla and accessed 10 October 2026. The per-place internet speeds shown on the site are derived from it and are shared under the same licence: attribution, non-commercial use, share alike.
   - GRAO: registered population counts per settlement.
+  - Employment Agency: unemployment rate by municipality (2025), taken from the map of the Institute for Market Economics, 265obshtini.bg. Shown only as a rounded rough guide.
