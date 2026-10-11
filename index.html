@@ -311,7 +311,7 @@ th[data-k]:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;borde
 @media (max-width:760px){.quizgrid{grid-template-columns:1fr}.quiz{min-height:0}}
 @media (pointer:coarse){.qopt span{min-height:44px}}
 
-/* best places + similar */
+/* best-served places + similar */
 .topcard{margin-top:20px;padding:16px 18px}
 .tophead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .tophead h2{font:700 13px/1.2 var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--river);margin:0}
@@ -596,7 +596,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
         <span class="eyebrow" data-i="eyebrow">Над 5300 населени места · 28 области</span>
         <h1 data-i="h1">Къде да живея в България?</h1>
         <p class="tagline" data-i="tagline">Вижте какво има наблизо — училище, лекар, аптека, болница — за всяко село и град.</p>
-        <p class="lede" data-i="lede">Всяко населено място получава оценка от 0 до 10 според това колко лесно стигате до училище, личен лекар, аптека, зъболекар и болница и колко е далеч от областния град. Данните за услугите са от официални регистри, а вие решавате кое е най-важно за вас.</p>
+        <p class="lede" data-i="lede">Всяко населено място получава оценка от 0 до 10 според това колко лесно стигате до училище, личен лекар, аптека, зъболекар и болница и колко е далеч от областния град. Данните за услугите са от официални регистри, а вие решавате кое е най-важно за вас. Оценката показва само достъпа до услуги, не цялото качество на живот: работа, цени, природа, хора и сигурност не влизат в нея.</p>
         <div class="finder">
           <div class="sbox">
             <div class="sglass">
@@ -638,7 +638,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
     <div class="facts" id="facts"></div>
   </div>
 <section class="card quiz" aria-labelledby="quizT">
-    <div class="quizhead"><div><h2 id="quizT" data-i="quizT">Кажете ни за вас</h2><p class="hint" data-i="quizP">Четири кратки въпроса. Оценките и най-добрите места се променят веднага.</p></div><button type="button" class="btn" id="quizReset" data-i="quizReset" disabled>Изчисти отговорите</button></div>
+    <div class="quizhead"><div><h2 id="quizT" data-i="quizT">Кажете ни за вас</h2><p class="hint" data-i="quizP">Четири кратки въпроса. Оценките и най-добре обслужените места се променят веднага.</p></div><button type="button" class="btn" id="quizReset" data-i="quizReset" disabled>Изчисти отговорите</button></div>
     <div class="quizgrid" id="quizGrid"><fieldset class="qq"><legend>Има ли деца в училищна възраст?</legend><div class="qopts"><label class="qopt"><input type="radio" name="q0" value="0"><span>Не</span></label><label class="qopt"><input type="radio" name="q0" value="1"><span>Да</span></label></div></fieldset><fieldset class="qq"><legend>Колко често ви трябват лекар и аптека?</legend><div class="qopts"><label class="qopt"><input type="radio" name="q1" value="0"><span>Рядко</span></label><label class="qopt"><input type="radio" name="q1" value="1"><span>Понякога</span></label><label class="qopt"><input type="radio" name="q1" value="2"><span>Често</span></label></div></fieldset><fieldset class="qq"><legend>Колко близо трябва да е болницата?</legend><div class="qopts"><label class="qopt"><input type="radio" name="q2" value="0"><span>Не е важно</span></label><label class="qopt"><input type="radio" name="q2" value="1"><span>Важно е</span></label><label class="qopt"><input type="radio" name="q2" value="2"><span>Много важно</span></label></div></fieldset><fieldset class="qq"><legend>Колко ви е важна близостта до областния град?</legend><div class="qopts"><label class="qopt"><input type="radio" name="q3" value="0"><span>Не е важна</span></label><label class="qopt"><input type="radio" name="q3" value="1"><span>Важна е</span></label><label class="qopt"><input type="radio" name="q3" value="2"><span>Много важна</span></label></div></fieldset></div>
   </section>
   <details class="card weights" id="weightsPanel">
@@ -705,7 +705,7 @@ td.name small{display:block;font-weight:400;color:var(--muted);font-size:12px}
    text appears immediately and the heavy work never delays it. Order is preserved. */
 (function(){
   var files=["data.js","tiles.js","app.js"],started=false;
-  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610101051";s.async=false;document.body.appendChild(s)})}
+  function go(){if(started)return;started=true;files.forEach(function(f){var s=document.createElement("script");s.src=f+"?v=202610112103";s.async=false;document.body.appendChild(s)})}
   function afterPaint(){
     if(document.hidden){go();return}                       /* background tab: nothing to wait for */
     var fired=false;function once(){if(!fired){fired=true;setTimeout(go,0)}}
